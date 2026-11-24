@@ -14,9 +14,13 @@ public class SpringAppliaction {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
         Person p1 = applicationContext.getBean(Person.class);
 //        System.out.println(p1);
-        String[] beanNamesForType = applicationContext.getBeanNamesForType(Person.class);
-        for (String s : beanNamesForType) {
-            System.out.println(s);
+//        String[] beanNamesForType = applicationContext.getBeanNamesForType(Person.class);
+//        for (String s : beanNamesForType) {
+//            System.out.println(s);
+//        }
+        final String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
+        for (String beanDefinitionName : beanDefinitionNames) {
+            System.out.println(beanDefinitionName);
         }
     }
 }
